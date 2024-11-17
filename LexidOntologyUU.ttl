@@ -108,3 +108,14 @@ lexid-s:hasPromulgationOffice rdf:type owl:ObjectProperty .
 lexid-s:hasPromulgationOfficial rdf:type owl:ObjectProperty .
 
 dct:description rdf:type owl:ObjectProperty .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/lexid/schema/LegalDocument
+lexid-s:LegalDocument rdf:type owl:Class .
+
+
+###  https://w3id.org/lexid/schema/LegalDocumentContent
+lexid-s:LegalDocumentContent rdf:type owl:Class .
