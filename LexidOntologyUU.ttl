@@ -35,7 +35,7 @@ lexid-s:hasContent rdf:type owl:ObjectProperty .
 
 ###  https://w3id.org/lex-id/schema/hasLegalBasis
 lexid-s:hasLegalBasis rdf:type owl:ObjectProperty ;
-                      owl:inverseOf lexid-s:legalBasisOf .
+                      owl:inverseOf lexid-s:LegalBasisOf .
 
 
 ###  https://w3id.org/lex-id/schema/hasPart
