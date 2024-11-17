@@ -9,7 +9,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @base <http://example.com/base/> .
 
-<http://www.semanticweb.org/ningg/ontologies/2022/4/lexid> rdf:type owl:Ontology .
+<http://example.com/base/> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
