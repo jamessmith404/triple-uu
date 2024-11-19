@@ -1,0 +1,220 @@
+@prefix : <http://www.semanticweb.org/lexid/ontologies/2022/4/untitled-ontology-5#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lexid-s: <https://w3id.org/lex-id/schema/> .
+@prefix lexid: <https://w3id.org/lex-id/data/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@base <http://example.com/base/> .
+
+<http://example.com/base/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/lex-id/schema/amendedBy
+lexid-s:amendedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf lexid-s:amends .
+
+
+###  https://w3id.org/lex-id/schema/amends
+lexid-s:amends rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/contentOf
+lexid-s:contentOf rdf:type owl:ObjectProperty ;
+                  owl:inverseOf lexid-s:hasContent .
+
+
+###  https://w3id.org/lex-id/schema/hasContent
+lexid-s:hasContent rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasLegalBasis
+lexid-s:hasLegalBasis rdf:type owl:ObjectProperty ;
+                      owl:inverseOf lexid-s:LegalBasisOf .
+
+
+###  https://w3id.org/lex-id/schema/hasRule
+lexid-s:hasRule rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isRuleOf .
+
+
+###  https://w3id.org/lex-id/schema/implementedBy
+lexid-s:implementedBy rdf:type owl:ObjectProperty ;
+                      owl:inverseOf lexid-s:implements .
+
+
+###  https://w3id.org/lex-id/schema/implements
+lexid-s:implements rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/isRuleOf
+lexid-s:isRuleOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/legalBasisOf
+lexid-s:legalBasisOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/repealedBy
+lexid-s:repealedBy rdf:type owl:ObjectProperty ;
+                   owl:inverseOf lexid-s:repeals .
+
+
+###  https://w3id.org/lex-id/schema/repeals
+lexid-s:repeals rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasChapter
+lexid-s:hasChapter rdf:type owl:ObjectProperty ;
+                   owl:inverseOf lexid-s:isChapterOf 
+
+
+### https://w3id.org/lex-id/schema/isChapterOf
+lexid-s:isChapterOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasPart
+lexid-s:hasPart rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isPartOf .
+
+
+### https://w3id.org/lex-id/schema/isPartOf
+lexid-s:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasParagraph
+lexid-s:hasParagraph rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isParagraphOf .
+
+
+### https://w3id.org/lex-id/schema/isParagraphOf
+lexid-s:isParagraphOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasArticle
+lexid-s:hasArticle rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isArticleOf .
+
+
+### https://w3id.org/lex-id/schema/isArticleOf
+lexid-s:isArticleOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasSection
+lexid-s:hasSection rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isSectionOf .
+
+
+### https://w3id.org/lex-id/schema/isSectionOf
+lexid-s:isSectionOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasItem
+lexid-s:hasItem rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isItemOf .
+
+
+### https://w3id.org/lex-id/schema/isItemOf
+lexid-s:isItemOf rdf:type owl:ObjectProperty .
+
+
+lexid-s:name rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasRegulationNumber rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasRegulationYear rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasCreator rdf:type owl:ObjectProperty .
+
+
+lexid-s:considers rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasDictum rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasPromulgationPlace rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasEnactionDate rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasEnactionLocation rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasEnactionOffice rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasEnactionOfficial rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasPromulgationDate rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasPromulgationLocation rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasPromulgationOffice rdf:type owl:ObjectProperty .
+
+
+lexid-s:hasPromulgationOfficial rdf:type owl:ObjectProperty .
+
+
+dct:description rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/lexid/schema/LegalDocument
+lexid-s:LegalDocument rdf:type owl:Class .
+
+
+###  https://w3id.org/lexid/schema/LegalDocumentContent
+lexid-s:LegalDocumentContent rdf:type owl:Class .
+
+
+###  https://w3id.org/lexid/schema/Act
+lexid-s:Act rdf:type owl:Class ;
+            rdfs:subClassOf lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lexid/schema/Article
+lexid-s:Article rdf:type owl:Class ;
+                rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lexid/schema/Chapter
+lexid-s:Chapter rdf:type owl:Class ;
+                rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lexid/schema/Item
+lexid-s:Item rdf:type owl:Class ;
+             rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lexid/schema/Paragraph
+lexid-s:Paragraph rdf:type owl:Class ;
+                  rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lexid/schema/Part
+lexid-s:Part rdf:type owl:Class ;
+             rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lexid/schema/Section
+lexid-s:Section rdf:type owl:Class ;
+                rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+            
