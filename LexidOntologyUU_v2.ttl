@@ -71,7 +71,7 @@ lexid-s:repeals rdf:type owl:ObjectProperty .
 
 ###  https://w3id.org/lex-id/schema/hasChapter
 lexid-s:hasChapter rdf:type owl:ObjectProperty ;
-                   owl:inverseOf lexid-s:isChapterOf 
+                   owl:inverseOf lexid-s:isChapterOf .
 
 
 ### https://w3id.org/lex-id/schema/isChapterOf
