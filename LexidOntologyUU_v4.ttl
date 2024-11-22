@@ -1,0 +1,331 @@
+@prefix : <http://www.semanticweb.org/lexid/ontologies/2022/4/untitled-ontology-5#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lexid: <https://w3id.org/lex-id/data/> .
+@prefix lexid-s: <https://w3id.org/lex-id/schema/> .
+@base <http://www.semanticweb.org/lexid/ontologies/2022/4/untitled-ontology-5#> .
+
+<http://example.com/base/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+dct:description rdf:type owl:ObjectProperty ;
+                rdfs:domain lexid-s:Article ,
+                            lexid-s:Section ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty owl:topDataProperty ;
+                             owl:allValuesFrom xsd:string
+                           ] .
+
+
+###  https://w3id.org/lex-id/schema/LegalBasisOf
+lexid-s:LegalBasisOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf lexid-s:hasLegalBasis .
+
+
+###  https://w3id.org/lex-id/schema/amendedBy
+lexid-s:amendedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf lexid-s:amends ;
+                  rdfs:domain lexid-s:LegalDocument ;
+                  rdfs:range lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/amends
+lexid-s:amends rdf:type owl:ObjectProperty ;
+               rdfs:domain lexid-s:LegalDocument ;
+               rdfs:range lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/considers
+lexid-s:considers rdf:type owl:ObjectProperty ;
+                  rdfs:domain lexid-s:LegalDocument ;
+                  rdfs:range [ rdf:type owl:Restriction ;
+                               owl:onProperty owl:topDataProperty ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
+###  https://w3id.org/lex-id/schema/contentOf
+lexid-s:contentOf rdf:type owl:ObjectProperty ;
+                  owl:inverseOf lexid-s:hasContent .
+
+
+###  https://w3id.org/lex-id/schema/hasArticle
+lexid-s:hasArticle rdf:type owl:ObjectProperty ;
+                   owl:inverseOf lexid-s:isArticleOf ;
+                   rdfs:range lexid-s:Article .
+
+
+###  https://w3id.org/lex-id/schema/hasChapter
+lexid-s:hasChapter rdf:type owl:ObjectProperty ;
+                   owl:inverseOf lexid-s:isChapterOf ;
+                   rdfs:range lexid-s:Chapter .
+
+
+###  https://w3id.org/lex-id/schema/hasContent
+lexid-s:hasContent rdf:type owl:ObjectProperty ;
+                   rdfs:domain lexid-s:LegalDocument ;
+                   rdfs:range lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/hasCreator
+lexid-s:hasCreator rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasDictum
+lexid-s:hasDictum rdf:type owl:ObjectProperty ;
+                  rdfs:domain lexid-s:LegalDocument ;
+                  rdfs:range [ rdf:type owl:Restriction ;
+                               owl:onProperty owl:topDataProperty ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
+###  https://w3id.org/lex-id/schema/hasEnactionDate
+lexid-s:hasEnactionDate rdf:type owl:ObjectProperty ;
+                        rdfs:domain lexid-s:LegalDocument ;
+                        rdfs:range [ rdf:type owl:Restriction ;
+                                     owl:onProperty owl:topDataProperty ;
+                                     owl:allValuesFrom xsd:string
+                                   ] .
+
+
+###  https://w3id.org/lex-id/schema/hasEnactionLocation
+lexid-s:hasEnactionLocation rdf:type owl:ObjectProperty ;
+                            rdfs:domain lexid-s:LegalDocument ;
+                            rdfs:range [ rdf:type owl:Restriction ;
+                                         owl:onProperty owl:topDataProperty ;
+                                         owl:allValuesFrom xsd:string
+                                       ] .
+
+
+###  https://w3id.org/lex-id/schema/hasEnactionOffice
+lexid-s:hasEnactionOffice rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasEnactionOfficial
+lexid-s:hasEnactionOfficial rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/hasItem
+lexid-s:hasItem rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isItemOf ;
+                rdfs:range lexid-s:Item .
+
+
+###  https://w3id.org/lex-id/schema/hasLegalBasis
+lexid-s:hasLegalBasis rdf:type owl:ObjectProperty ;
+                      rdfs:domain lexid-s:LegalDocument ;
+                      rdfs:range lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/hasParagraph
+lexid-s:hasParagraph rdf:type owl:ObjectProperty ;
+                     owl:inverseOf lexid-s:isParagraphOf ;
+                     rdfs:range lexid-s:Paragraph .
+
+
+###  https://w3id.org/lex-id/schema/hasPart
+lexid-s:hasPart rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isPartOf ;
+                rdfs:range lexid-s:LegalDocumentContent ,
+                           lexid-s:Part .
+
+
+###  https://w3id.org/lex-id/schema/hasPromulgationDate
+lexid-s:hasPromulgationDate rdf:type owl:ObjectProperty ;
+                            rdfs:domain lexid-s:LegalDocument ;
+                            rdfs:range [ rdf:type owl:Restriction ;
+                                         owl:onProperty owl:topDataProperty ;
+                                         owl:allValuesFrom xsd:string
+                                       ] .
+
+
+###  https://w3id.org/lex-id/schema/hasPromulgationLocation
+lexid-s:hasPromulgationLocation rdf:type owl:ObjectProperty ;
+                                rdfs:domain lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/hasPromulgationOffice
+lexid-s:hasPromulgationOffice rdf:type owl:ObjectProperty ;
+                              rdfs:domain lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/hasPromulgationOfficial
+lexid-s:hasPromulgationOfficial rdf:type owl:ObjectProperty ;
+                                rdfs:domain lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/hasPromulgationPlace
+lexid-s:hasPromulgationPlace rdf:type owl:ObjectProperty ;
+                             rdfs:domain lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/hasRegulationNumber
+lexid-s:hasRegulationNumber rdf:type owl:ObjectProperty ;
+                            rdfs:domain lexid-s:LegalDocument ;
+                            rdfs:range [ rdf:type owl:Restriction ;
+                                         owl:onProperty owl:topDataProperty ;
+                                         owl:allValuesFrom xsd:string
+                                       ] .
+
+
+###  https://w3id.org/lex-id/schema/hasRegulationYear
+lexid-s:hasRegulationYear rdf:type owl:ObjectProperty ;
+                          rdfs:domain lexid-s:LegalDocument ;
+                          rdfs:range [ rdf:type owl:Restriction ;
+                                       owl:onProperty owl:topDataProperty ;
+                                       owl:allValuesFrom xsd:string
+                                     ] .
+
+
+###  https://w3id.org/lex-id/schema/hasRule
+lexid-s:hasRule rdf:type owl:ObjectProperty ;
+                owl:inverseOf lexid-s:isRuleOf .
+
+
+###  https://w3id.org/lex-id/schema/hasSection
+lexid-s:hasSection rdf:type owl:ObjectProperty ;
+                   owl:inverseOf lexid-s:isSectionOf ;
+                   rdfs:range lexid-s:Section .
+
+
+###  https://w3id.org/lex-id/schema/hasStatus
+lexid-s:hasStatus rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain lexid-s:LegalDocument ;
+                  rdfs:range [ rdf:type owl:Restriction ;
+                               owl:onProperty owl:topDataProperty ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
+###  https://w3id.org/lex-id/schema/implementedBy
+lexid-s:implementedBy rdf:type owl:ObjectProperty ;
+                      owl:inverseOf lexid-s:implements ;
+                      rdfs:domain lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/implements
+lexid-s:implements rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/isArticleOf
+lexid-s:isArticleOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain lexid-s:Article .
+
+
+###  https://w3id.org/lex-id/schema/isChapterOf
+lexid-s:isChapterOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain lexid-s:Chapter .
+
+
+###  https://w3id.org/lex-id/schema/isItemOf
+lexid-s:isItemOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain lexid-s:Item .
+
+
+###  https://w3id.org/lex-id/schema/isParagraphOf
+lexid-s:isParagraphOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain lexid-s:Paragraph .
+
+
+###  https://w3id.org/lex-id/schema/isPartOf
+lexid-s:isPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain lexid-s:LegalDocumentContent ,
+                             lexid-s:Part ;
+                 rdfs:range lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/isRuleOf
+lexid-s:isRuleOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/isSectionOf
+lexid-s:isSectionOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain lexid-s:Section .
+
+
+###  https://w3id.org/lex-id/schema/legalBasisOf
+lexid-s:legalBasisOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/lex-id/schema/name
+lexid-s:name rdf:type owl:ObjectProperty ;
+             rdfs:domain lexid-s:LegalDocument ,
+                         lexid-s:LegalDocumentContent ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty owl:topDataProperty ;
+                          owl:allValuesFrom xsd:string
+                        ] .
+
+
+###  https://w3id.org/lex-id/schema/repealedBy
+lexid-s:repealedBy rdf:type owl:ObjectProperty ;
+                   owl:inverseOf lexid-s:repeals ;
+                   rdfs:domain lexid-s:LegalDocument ;
+                   rdfs:range lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/repeals
+lexid-s:repeals rdf:type owl:ObjectProperty ;
+                rdfs:domain lexid-s:LegalDocument ,
+                            lexid-s:LegalDocumentContent ;
+                rdfs:range lexid-s:LegalDocument .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/lex-id/schema/Act
+lexid-s:Act rdf:type owl:Class ;
+            rdfs:subClassOf lexid-s:LegalDocument .
+
+
+###  https://w3id.org/lex-id/schema/Article
+lexid-s:Article rdf:type owl:Class ;
+                rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/Chapter
+lexid-s:Chapter rdf:type owl:Class ;
+                rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/Item
+lexid-s:Item rdf:type owl:Class ;
+             rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/LegalDocument
+lexid-s:LegalDocument rdf:type owl:Class .
+
+
+###  https://w3id.org/lex-id/schema/LegalDocumentContent
+lexid-s:LegalDocumentContent rdf:type owl:Class .
+
+
+###  https://w3id.org/lex-id/schema/Paragraph
+lexid-s:Paragraph rdf:type owl:Class ;
+                  rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/Part
+lexid-s:Part rdf:type owl:Class ;
+             rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  https://w3id.org/lex-id/schema/Section
+lexid-s:Section rdf:type owl:Class ;
+                rdfs:subClassOf lexid-s:LegalDocumentContent .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
